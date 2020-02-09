@@ -44,16 +44,15 @@ class AppController extends BaseController
         return response()->json(Vendor::all());
     }
 
-    private function getTransactionsForWeek($date) {
-        $dayofweek = date('w', strtotime($date));
-        $start     = date('Y-m-d', strtotime((0 - $dayofweek).' day', strtotime($date)));
-        $end       = date('Y-m-d', strtotime((6 - $dayofweek).' day', strtotime($date)));
+    private function getTransactionsInRange($from, $to) {
+        $start     = date('Y-m-d', strtotime($from));
+        $end       = date('Y-m-d', strtotime($to));
         $transactions = Transaction::whereBetween('created_at', [$start . " 00:00:00", $end . " 23:59:59"])->get();
-        return ["start" => $start, "end" => $end, "transactions" => $transactions];
+        return $transactions;
     }
 
-    public function getTransactions() {
-        $transactions = $this->getTransactionsForWeek(now())["transactions"];
+    public function getTransactions(Request $request) {
+        $transactions = $this->getTransactionsInRange($request->from, $request->to);
 
         $formatted = [];
         foreach ($transactions as $transaction) {
@@ -65,25 +64,26 @@ class AppController extends BaseController
         return response()->json($formatted);
     }
 
-    public function calculateWeek() {
-        $data = $this->getTransactionsForWeek(date('Y-m-d', strtotime("7 days ago")));
+    public function calculateTransactions(Request $request) {
+        $transactions = $this->getTransactionsInRange($request->from, $request->to);
 
-        $transactions = $data["transactions"];
-        $start = $data["start"];
-        $end = $data["end"];
+        $start = date('Y-m-d', strtotime($request->from));
+        $end = date('Y-m-d', strtotime($request->to));
 
         $total = 0.0;
         $petrol = 0.0;
-        $maid = env("MAID", 200);
+        $maid = 0.0;
         foreach ($transactions as $transaction) {
             $vendor = Vendor::where('id', $transaction->vendor_id)->first();
             $total += $transaction->amount;
             if(strcmp($vendor->name, "Petrol") == 0) {
                 $petrol += $transaction->amount;
             }
+            if(strcmp($vendor->name, "Maid") == 0) {
+                $maid += env("MAID", 200);
+            }
         }
-        $total += $maid;
 
-        return response()->json(["data" => "Total for week " . $start . " to " . $end . ": R" . number_format((float)$total, 2, '.', '') . " (Petrol: R" . number_format((float)$petrol, 2, '.', '') . ", Maid: R" . number_format((float)$maid, 2, '.', '') . ")"]);
+        return response()->json(["data" => "Total for range " . $start . " to " . $end . ": R" . number_format((float)$total, 2, '.', '') . " (Petrol: R" . number_format((float)$petrol, 2, '.', '') . ", Maid: R" . number_format((float)$maid, 2, '.', '') . ")"]);
     }
 }

@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('auth:api')->get('/transactions', 'API\AppController@getTransactions');
+Route::middleware('auth:api')->post('/transactions', 'API\AppController@getTransactions');
 Route::middleware('auth:api')->get('/vendors', 'API\AppController@getVendors');
 Route::middleware('auth:api')->post('/create', 'API\AppController@createTransaction');
-Route::middleware('auth:api')->get('/week', 'API\AppController@calculateWeek');
+Route::middleware('auth:api')->post('/calculate', 'API\AppController@calculateTransactions');
