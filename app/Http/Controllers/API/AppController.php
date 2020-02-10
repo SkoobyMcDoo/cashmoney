@@ -41,7 +41,7 @@ class AppController extends BaseController
     }
 
     public function getVendors() {
-        return response()->json(Vendor::all());
+        return response()->json(Vendor::all(["name"]));
     }
 
     private function getTransactionsInRange($from, $to) {
