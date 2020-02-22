@@ -12,6 +12,7 @@ class vendorSeeder extends Seeder
      */
     public function run()
     {
+        Vendor::create(['name' => 'Housekeeper']);
         Vendor::create(['name' => 'Petrol']);
         Vendor::create(['name' => 'Checkers']);
         Vendor::create(['name' => 'Woolworths']);

@@ -37,6 +37,12 @@ class AppController extends BaseController
         $transaction->amount = $request->amount;
         $transaction->vendor_id = $vendor->id;
         $transaction->save();
+        $transaction->refresh();
+
+        if(strcmp(date('Y-m-d', strtotime($transaction->created_at)), date('Y-m-d', strtotime($request->date))) != 0) {
+            $transaction->created_at = date('Y-m-d', strtotime($request->date)) . " 12:00:00";
+            $transaction->save();
+        }
         return response()->json(["message" => $transaction]);
     }
 
@@ -84,6 +90,6 @@ class AppController extends BaseController
             }
         }
 
-        return response()->json(["data" => "Total for range " . $start . " to " . $end . ": R" . number_format((float)$total, 2, '.', '') . " (Petrol: R" . number_format((float)$petrol, 2, '.', '') . ", Maid: R" . number_format((float)$maid, 2, '.', '') . ")"]);
+        return response()->json(["data" => "Total for range " . $start . " to " . $end . ": R" . number_format((float)$total, 2, '.', '') . " (Petrol: R" . number_format((float)$petrol, 2, '.', '') . ", Housekeeper: R" . number_format((float)$maid, 2, '.', '') . ")"]);
     }
 }
