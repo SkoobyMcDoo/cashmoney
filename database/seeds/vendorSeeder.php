@@ -18,6 +18,7 @@ class vendorSeeder extends Seeder
         Vendor::create(['name' => 'Woolworths']);
         Vendor::create(['name' => 'Spar']);
         Vendor::create(['name' => 'Pick n Pay']);
+        Vendor::create(['name' => 'McDonalds']);
         Vendor::create(['name' => 'Zara']);
         Vendor::create(['name' => 'H&M']);
         Vendor::create(['name' => 'Dischem']);
@@ -26,5 +27,9 @@ class vendorSeeder extends Seeder
         Vendor::create(['name' => 'Aramex Global Shopper']);
         Vendor::create(['name' => 'ColourPop']);
         Vendor::create(['name' => 'Glossier']);
+        Vendor::create(['name' => 'Misc: Snacks']);
+        Vendor::create(['name' => 'Misc: Food']);
+        Vendor::create(['name' => 'Misc: Apparel']);
+        Vendor::create(['name' => 'Misc: Groceries']);
     }
 }
