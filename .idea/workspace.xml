@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4842e4eb-7f19-4f80-96f0-d1855651d69f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/AppController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/vendorSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/vendorSeeder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,8 +79,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/AppController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="707">
-              <caret line="92" column="214" selection-start-line="92" selection-start-column="214" selection-end-line="92" selection-end-column="214" />
+            <state relative-caret-position="622">
+              <caret line="87" column="49" selection-start-line="87" selection-start-column="49" selection-end-line="87" selection-end-column="49" />
               <folding>
                 <element signature="e#44#64#0#PHP" expanded="true" />
                 <element signature="e#289#787#0#PHP" />
@@ -371,12 +368,12 @@
       <workItem from="1581259954941" duration="1837000" />
       <workItem from="1581346708475" duration="151000" />
       <workItem from="1581407922260" duration="177000" />
-      <workItem from="1582367939309" duration="639000" />
+      <workItem from="1582367939309" duration="895000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22047000" />
+    <option name="totallyTimeSpent" value="22303000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-320" width="1936" height="1056" extended-state="6" />
@@ -575,8 +572,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/AppController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="707">
-          <caret line="92" column="214" selection-start-line="92" selection-start-column="214" selection-end-line="92" selection-end-column="214" />
+        <state relative-caret-position="622">
+          <caret line="87" column="49" selection-start-line="87" selection-start-column="49" selection-end-line="87" selection-end-column="49" />
           <folding>
             <element signature="e#44#64#0#PHP" expanded="true" />
             <element signature="e#289#787#0#PHP" />

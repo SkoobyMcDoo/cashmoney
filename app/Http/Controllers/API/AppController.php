@@ -85,7 +85,7 @@ class AppController extends BaseController
             if(strcmp($vendor->name, "Petrol") == 0) {
                 $petrol += $transaction->amount;
             }
-            if(strcmp($vendor->name, "Maid") == 0) {
+            if(strcmp($vendor->name, "Housekeeper") == 0) {
                 $maid += env("MAID", 200);
             }
         }
