@@ -14,22 +14,23 @@ class vendorSeeder extends Seeder
     {
         Vendor::create(['name' => 'Housekeeper']);
         Vendor::create(['name' => 'Petrol']);
-        Vendor::create(['name' => 'Checkers']);
-        Vendor::create(['name' => 'Woolworths']);
-        Vendor::create(['name' => 'Spar']);
-        Vendor::create(['name' => 'Pick n Pay']);
-        Vendor::create(['name' => 'McDonalds']);
-        Vendor::create(['name' => 'Zara']);
-        Vendor::create(['name' => 'H&M']);
-        Vendor::create(['name' => 'Dischem']);
-        Vendor::create(['name' => 'Clicks']);
-        Vendor::create(['name' => 'Khans']);
-        Vendor::create(['name' => 'Aramex Global Shopper']);
-        Vendor::create(['name' => 'ColourPop']);
-        Vendor::create(['name' => 'Glossier']);
-        Vendor::create(['name' => 'Misc: Snacks']);
-        Vendor::create(['name' => 'Misc: Food']);
-        Vendor::create(['name' => 'Misc: Apparel']);
-        Vendor::create(['name' => 'Misc: Groceries']);
+        Vendor::create(['name' => 'Household Expenses and Repair']);
+        Vendor::create(['name' => 'Groceries']);
+        Vendor::create(['name' => 'Toiletries']);
+        Vendor::create(['name' => 'Medical']);
+        Vendor::create(['name' => 'Food']);
+        Vendor::create(['name' => 'Apparel']);
+        Vendor::create(['name' => 'Cosmetics']);
+        Vendor::create(['name' => 'Haircare and Aesthetics']);
+        Vendor::create(['name' => 'Snacks']);
+        Vendor::create(['name' => 'Electronics']);
+        Vendor::create(['name' => 'Video Games']);
+        Vendor::create(['name' => 'Books and Magazines']);
+        Vendor::create(['name' => 'Cinema, Music and Entertainment']);
+        Vendor::create(['name' => 'Toys and Collectibles']);
+        Vendor::create(['name' => 'Airtime and Data']);
+        Vendor::create(['name' => 'Jewellery']);
+        Vendor::create(['name' => 'Kitchen Accessories and Utensils']);
+        Vendor::create(['name' => 'Travel Expenses']);
     }
 }

@@ -64,7 +64,7 @@ class AppController extends BaseController
         foreach ($transactions as $transaction) {
             $vendor = Vendor::where('id', $transaction->vendor_id)->first();
             $sale_date = date('Y-m-d', strtotime($transaction->created_at));
-            $formatted[] = "R" . $transaction->amount . " at " . $vendor->name . " on " . $sale_date;
+            $formatted[] = "R" . $transaction->amount . " for " . $vendor->name . " on " . $sale_date;
         }
 
         return response()->json($formatted);
