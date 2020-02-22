@@ -19,6 +19,7 @@ class vendorSeeder extends Seeder
         Vendor::create(['name' => 'Toiletries']);
         Vendor::create(['name' => 'Medical']);
         Vendor::create(['name' => 'Food']);
+        Vendor::create(['name' => 'Butchery']);
         Vendor::create(['name' => 'Apparel']);
         Vendor::create(['name' => 'Cosmetics']);
         Vendor::create(['name' => 'Haircare and Aesthetics']);
